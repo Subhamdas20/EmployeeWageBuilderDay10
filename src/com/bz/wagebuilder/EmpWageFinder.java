@@ -10,7 +10,7 @@ public class EmpWageFinder {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter No. of Companies");
         num = scanner.nextInt();
-        EmpWageCalculation empWageBuilder = new EmpWageBuilderArray(num);
+        EmpWageCalculation empWageBuilder = new EmpWageBuilderArray();
         for (int i = 0; i < num; i++) {
             System.out.println(
                     "Enter Company Details as given:\n CompanyName EmployeeRatePerHr NoOfWorkingDays MaxHrsPerMonth");
