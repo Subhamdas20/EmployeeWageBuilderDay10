@@ -5,14 +5,14 @@ public class CompanyEmpWage {
     public final String company;
     public final int empRatePerHr;
     public final int noOfWorkingDays;
-    public final int maxHrsPeronth;
+    public final int maxHrsPerMonth;
     public int totalEmpWage;
 
-    public CompanyEmpWage(String company, int empRatePerHr, int noOfWorkingDays, int maxHrsPeronth) {
+    public CompanyEmpWage(String company, int empRatePerHr, int noOfWorkingDays, int maxHrsPerMonth) {
         this.company = company;
         this.empRatePerHr = empRatePerHr;
         this.noOfWorkingDays = noOfWorkingDays;
-        this.maxHrsPeronth = maxHrsPeronth;
+        this.maxHrsPerMonth = maxHrsPerMonth;
     }
 
     public void setTotalEmpWage(int totalEmpWage) {
@@ -21,6 +21,6 @@ public class CompanyEmpWage {
 
     @Override
     public String toString() {
-        return "Total Emp Wage for Company:" + company + " is: " + totalEmpWage + "\n";
+        return "Total Emp Wage for Company : " + company + " is : " + totalEmpWage + "\n";
     }
 }

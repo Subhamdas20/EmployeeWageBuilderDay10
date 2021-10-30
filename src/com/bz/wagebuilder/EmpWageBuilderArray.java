@@ -1,6 +1,10 @@
 package com.bz.wagebuilder;
 
 public class EmpWageBuilderArray implements EmpWageCalculation {
+    /*
+    * addCompanyEmpWage method is used to add company details in companyEmpWageArray
+    *
+    * */
     public static final int IS_PART_TIME = 1;
     public static final int IS_FULL_TIME = 2;
     public int numOfCompany = 0;
@@ -17,7 +21,7 @@ public class EmpWageBuilderArray implements EmpWageCalculation {
     public void computeEmpWage() {
         for (int i = 0; i < numOfCompany; i++) {
             companyEmpWageArray[i].setTotalEmpWage(this.computeEmpWage(companyEmpWageArray[i]));
-            System.out.println(companyEmpWageArray[i]);
+            System.out.println(companyEmpWageArray[i].toString());
         }
     }
 
@@ -26,7 +30,7 @@ public class EmpWageBuilderArray implements EmpWageCalculation {
         int totalWorkingDays = 0;
         int totalEmpHrs = 0;
         System.out.println("Calculating Wage for Company: " + companyEmpWage.company);
-        while (totalEmpHrs <= companyEmpWage.maxHrsPeronth && totalWorkingDays < companyEmpWage.noOfWorkingDays) {
+        while (totalEmpHrs <= companyEmpWage.maxHrsPerMonth && totalWorkingDays < companyEmpWage.noOfWorkingDays) {
             totalWorkingDays++;
             int empCheck = (int) Math.floor(Math.random() * 10) % 3;
             switch (empCheck) {
@@ -39,10 +43,10 @@ public class EmpWageBuilderArray implements EmpWageCalculation {
                 default:
                     empHrs = 0;
                     break;
-            }// End Case
+            }
             totalEmpHrs += empHrs;
             System.out.println("Day: " + totalWorkingDays + "\tEmp Hr: " + empHrs);
-        } // End While
+        }
         return totalEmpHrs * companyEmpWage.empRatePerHr;
     }
 }
