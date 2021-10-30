@@ -1,4 +1,5 @@
 package com.bz.wagebuilder;
+
 public class EmpWageBuilderArray {
     public static final int IS_PART_TIME = 1;
     public static final int IS_FULL_TIME = 2;
@@ -28,8 +29,6 @@ public class EmpWageBuilderArray {
         int totalEmpWage = 0;
         int totalWorkingDays = 0;
         int totalEmpHrs = 0;
-
-
         while (totalEmpHrs <= companyEmpWage.maxHrsPeronth && totalWorkingDays < companyEmpWage.noOfWorkingDays) {
             totalWorkingDays++;
             int empCheck = (int) Math.floor(Math.random() * 10) % 3;
@@ -52,12 +51,8 @@ public class EmpWageBuilderArray {
     }
 
     public static void main(String[] args) throws Exception {
-
-
         System.out.println("Welcome to Employee Wedge Builder...");
         System.out.println("************************************\n");
-
-
         EmpWageBuilderArray empWageBuilder = new EmpWageBuilderArray();
         empWageBuilder.addCompanyEmpWage("hclTech", 20, 2, 10);
         empWageBuilder.addCompanyEmpWage("Google", 10, 4, 20);
