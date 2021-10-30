@@ -1,5 +1,8 @@
 package com.bz.wagebuilder;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class EmpWageBuilderArray implements EmpWageCalculation {
     /*
     * addCompanyEmpWage method is used to add company details in companyEmpWageArray
@@ -8,20 +11,21 @@ public class EmpWageBuilderArray implements EmpWageCalculation {
     public static final int IS_PART_TIME = 1;
     public static final int IS_FULL_TIME = 2;
     public int numOfCompany = 0;
-    public CompanyEmpWage[] companyEmpWageArray;
-    public EmpWageBuilderArray(int n) {
-        companyEmpWageArray = new CompanyEmpWage[n];
-    }
+    private List<CompanyEmpWage> companyEmpWageList;
 
+    public EmpWageBuilderArray(int n) {
+        companyEmpWageList = new ArrayList<>();
+    }
     public void addCompanyEmpWage(String company, int empRatePerHr, int noOfWorkingDays, int maxHrsPerMonth) {
-        companyEmpWageArray[numOfCompany] = new CompanyEmpWage(company, empRatePerHr, noOfWorkingDays, maxHrsPerMonth);
-        numOfCompany++;
+        CompanyEmpWage companyEmpWage = new CompanyEmpWage(company, empRatePerHr, noOfWorkingDays, maxHrsPerMonth);
+        companyEmpWageList.add(companyEmpWage);
     }
 
     public void computeEmpWage() {
-        for (int i = 0; i < numOfCompany; i++) {
-            companyEmpWageArray[i].setTotalEmpWage(this.computeEmpWage(companyEmpWageArray[i]));
-            System.out.println(companyEmpWageArray[i].toString());
+        for (int i = 0; i < companyEmpWageList.size(); i++) {
+            CompanyEmpWage companyEmpWage = companyEmpWageList.get(i);
+            companyEmpWage.setTotalEmpWage(this.computeEmpWage(companyEmpWage));
+            System.out.println(companyEmpWage);
         }
     }
 
