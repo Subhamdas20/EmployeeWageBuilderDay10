@@ -3,6 +3,9 @@ package com.bz.wagebuilder;
 import java.util.Scanner;
 
 public class EmpWageFinder {
+    /*
+    * main method
+    * */
     public static void main(String[] args) throws Exception {
         System.out.println("Welcome to Employee Wedge Builder...");
         System.out.println("************************************\n");
@@ -18,6 +21,7 @@ public class EmpWageFinder {
         }
         System.out.println("");
         empWageBuilder.computeEmpWage();
-
+        System.out.println("Enter Company Name: ");
+        System.out.println("Employee Wage: "+empWageBuilder.getTotalWage(scanner.next()));
     }
 }
