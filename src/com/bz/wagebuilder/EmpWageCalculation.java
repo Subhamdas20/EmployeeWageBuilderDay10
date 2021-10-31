@@ -2,7 +2,7 @@ package com.bz.wagebuilder;
 
 public interface EmpWageCalculation {
     /*
-    * Used interface
+    * Used interface EmpWageCalculation
     * */
     public void addCompanyEmpWage(String company, int empRatePerHr, int noOfWorkingDays, int maxHrsPerMonth);
     public void computeEmpWage();

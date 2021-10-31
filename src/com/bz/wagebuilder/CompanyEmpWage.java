@@ -1,7 +1,9 @@
 package com.bz.wagebuilder;
 
 public class CompanyEmpWage {
-
+    /*
+    *  CompanyEmpWage class is used to set the properties of employee wage builder
+    * */
     public final String company;
     public final int empRatePerHr;
     public final int noOfWorkingDays;
@@ -21,6 +23,9 @@ public class CompanyEmpWage {
     }
 
     public void printDailyWage() {
+        /*
+        * Prints all the wage details
+        * */
         for (int i = 0; i < dailyWage.length; i++) {
             System.out.println("Day " + (i + 1) + "\t Wage = " + dailyWage[i]);
         }

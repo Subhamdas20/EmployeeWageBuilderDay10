@@ -17,11 +17,17 @@ public class EmpWageBuilderArray implements EmpWageCalculation {
     HashMap<String, CompanyEmpWage> companyToEmpWage;
 
     public EmpWageBuilderArray() {
+        /*
+         * Constructor to create arrayList and hashMap
+         * */
         companyEmpWageList = new ArrayList<>();
         companyToEmpWage = new HashMap<>();
     }
 
     public void addCompanyEmpWage(String company, int empRatePerHr, int noOfWorkingDays, int maxHrsPerMonth) {
+        /*
+         * addCompanyEmpWage is used set all the properties in CompanyEmpWage.
+         * */
         CompanyEmpWage companyEmpWage = new CompanyEmpWage(company, empRatePerHr, noOfWorkingDays, maxHrsPerMonth);
         companyEmpWageList.add(companyEmpWage);
         companyToEmpWage.put(company, companyEmpWage);
@@ -32,6 +38,9 @@ public class EmpWageBuilderArray implements EmpWageCalculation {
     }
 
     public void computeEmpWage() {
+        /*
+        * print the employee wage
+        * */
         for (int i = 0; i < companyEmpWageList.size(); i++) {
             CompanyEmpWage companyEmpWage = companyEmpWageList.get(i);
             companyEmpWage.setTotalEmpWage(this.computeEmpWage(companyEmpWage));
@@ -43,6 +52,9 @@ public class EmpWageBuilderArray implements EmpWageCalculation {
     }
 
     public int computeEmpWage(CompanyEmpWage companyEmpWage) {
+        /*
+        * used to compute wage of employees
+        * */
         int empHrs = 0;
         int totalWorkingDays = 0;
         int totalEmpHrs = 0;
